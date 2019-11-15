@@ -29,11 +29,11 @@ def index():
       if oauth is not None:
         headers['Authorization'] = oauth;
       if xApiKey is not None:
-        headers['X-API-KEY'] = oauth; 
+        headers['X-API-KEY'] = xApiKey; 
       if xApiNonce is not None:
-        headers['X-API-NONCE'] = oauth; 
+        headers['X-API-NONCE'] = xApiNonce; 
       if xApiSignature is not None:
-        headers['X-API-SIGNATURE'] = oauth; 
+        headers['X-API-SIGNATURE'] = xApiSignature; 
         
       if request.method == "POST":
         user_data = {}

@@ -20,7 +20,7 @@ def index():
       oauth = request.headers.get('Authorization')
       ctype = request.headers.get('Content-Type')
 
-      headers = {}
+      headers = request.headers
       if agent is not None:
         headers['User-Agent'] = agent;
       if oauth is not None:

@@ -19,12 +19,21 @@ def index():
       agent = request.headers.get('User-Agent')
       oauth = request.headers.get('Authorization')
       ctype = request.headers.get('Content-Type')
+      xApiKey = request.headers.get('X-API-KEY')
+      xApiNonce = request.headers.get('X-API-NONCE')
+      xApiSignature = request.headers.get('X-API-SIGNATURE')
 
-      headers = request.headers
+      headers = {}
       if agent is not None:
         headers['User-Agent'] = agent;
       if oauth is not None:
         headers['Authorization'] = oauth;
+      if xApiKey is not None:
+        headers['X-API-KEY'] = oauth; 
+      if xApiNonce is not None:
+        headers['X-API-NONCE'] = oauth; 
+      if xApiSignature is not None:
+        headers['X-API-SIGNATURE'] = oauth; 
         
       if request.method == "POST":
         user_data = {}
